@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>YiChe Web Docs</title>
+    <meta name="description" content="documention for yiche web developer">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.ffe594a4.css" as="style"><link rel="preload" href="/assets/js/app.fe9a5ee1.js" as="script"><link rel="preload" href="/assets/js/2.76dc2f3e.js" as="script"><link rel="preload" href="/assets/js/8.86e97b83.js" as="script"><link rel="prefetch" href="/assets/js/10.bd8a5eab.js"><link rel="prefetch" href="/assets/js/11.8a56c68c.js"><link rel="prefetch" href="/assets/js/3.37e0feac.js"><link rel="prefetch" href="/assets/js/4.c4832647.js"><link rel="prefetch" href="/assets/js/5.cf9fe3ad.js"><link rel="prefetch" href="/assets/js/6.45b260a1.js"><link rel="prefetch" href="/assets/js/7.3cc16c12.js"><link rel="prefetch" href="/assets/js/9.b8d20eb0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ffe594a4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">YiChe Web Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">文档说明</a></li><li><a href="/tech-stack.html" class="sidebar-link">技术栈</a></li><li><a href="/dev-tools.html" class="sidebar-link">开发工具</a></li><li><a href="/pro-structure.html" class="active sidebar-link">项目架构</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pro-structure.html#目录结构" class="sidebar-link">目录结构</a></li><li class="sidebar-sub-header"><a href="/pro-structure.html#主要结构说明" class="sidebar-link">主要结构说明</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pro-structure.html#api-mock" class="sidebar-link">api-mock</a></li><li class="sidebar-sub-header"><a href="/pro-structure.html#public-模板页面目录" class="sidebar-link">public(模板页面目录)</a></li><li class="sidebar-sub-header"><a href="/pro-structure.html#package-json" class="sidebar-link">package.json</a></li><li class="sidebar-sub-header"><a href="/pro-structure.html#src" class="sidebar-link">src</a></li></ul></li></ul></li><li><a href="/dev-standard.html" class="sidebar-link">开发规范</a></li><li><a href="/work-flow.html" class="sidebar-link">WEB端工作流程</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>本节主要说明项目中通用的一些结构设计，具体项目可以酌情进行调整。</p> <h2 id="目录结构"><a href="#目录结构" class="header-anchor">#</a> 目录结构</h2> <div class="language- extra-class"><pre class="language-text"><code>┌─ xxx  项目根目录
+│  ├─ api-mock  // mock数据目录
+│  │  ├─ index.js // mock目录入口文件
+│  │  ├─ modules // mock脚本模块目录
+│  │  ├─ api-config.js // 动态接口域名获取文件
+│  │  ├─ ...
+│  ├─ node_modules // npm包安装目录   
+│  ├─ dist  // 项目默认打包目录
+│  ├─ public  // vue-cli3脚手架html模板文件目录 
+│  │  ├─ index.html  // 模板页面
+│  │  ├─ favicon.ico  // 网站图标
+│  │  ├─ robots.txt  // 爬虫机器人
+│  ├─ src  // 项目主目录
+│  │  ├─ api // 项目接口函数定义文件目录
+│  │  ├─ common // 项目通用目录 
+│  │  │  ├─ commonData // 通用数据文件目录
+│  │  │  ├─ components // 通用组件目录
+│  │  │  ├─ mixins // 通用mixin目录
+│  │  │  ├─ template // 通用模板组件目录
+│  │  │  ├─ index.js // 通用文件入口
+│  │  ├─ components // 基础组件目录
+│  │  ├─ config // 项目配置文件目录
+│  │  ├─ layouts // layout布局文件目录
+│  │  ├─ mixins // 全局mixins目录
+│  │  ├─ plugins // 项目插件文件目录
+│  │  ├─ public // 项目共用文件目录
+│  │  │  ├─ styles // 样式文件目录
+│  │  ├─ router // 路由配置和处理文件目录
+│  │  ├─ store // vuex相关文件目录
+│  │  ├─ utils // 功能函数文件目录
+│  │  ├─ views // 项目视图文件目录
+│  │  │  ├─ xxxx // 模块目录
+│  │  │  │  ├─ xxxx // 路由组件目录
+│  │  ├─ App.vue // 根组件文件
+│  │  ├─ main.js // 项目入口文件
+│  ├─ .gitignore  // git忽略配置文件
+│  ├─ package.json // 项目包管理文件
+│  ├─ // 以下文件是vue-cli3项目相关
+│  ├─ babel.config.js // babel配置文件
+│  ├─ vue.config.js // 脚手架配置文件
+</code></pre></div><h2 id="主要结构说明"><a href="#主要结构说明" class="header-anchor">#</a> 主要结构说明</h2> <h3 id="api-mock"><a href="#api-mock" class="header-anchor">#</a> api-mock</h3> <p>这个目录主要放置mock文件或脚本，配合<code>api-mock-plugin</code>插件使用，可以方便得使用json格式文件来mock接口数据。</p> <p>然而很多接口可以返回相同得内容（比如提交接口），此外有些接口可以使用固定格式返回数据（比如分页列表接口）。如果给每一个这类接口提供一个json文件，的确不太友好。所以，使用脚本可以方便处理这些场景。当然，使用这些不是无成本得，好在投入是一次性得，而收益是永久得。</p> <p>具体用法可参见<a href="https://www.npmjs.com/package/@wxhccc/api-mock-plugin" target="_blank" rel="noopener noreferrer">api-mock-plugin<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="public-模板页面目录"><a href="#public-模板页面目录" class="header-anchor">#</a> public(模板页面目录)</h3> <p>vue-cli3创建得项目主目录下得public目录用于放置项目主模板页面文件。而这个index.html则是打包后页面的模板，当需要添加cdn链接（比如iconfont的css，或者第三方api文件），需要修改这个文件。</p> <p>另外网站图标也在这个目录下</p> <h3 id="package-json"><a href="#package-json" class="header-anchor">#</a> package.json</h3> <p>项目主配置文件。所有的依赖包（dependencies）和开发包（devDependencies）都是通过这个文件进行管理的。注意不要把npm包安装错了位置。</p> <div class="custom-block tip"><p class="custom-block-title">友情提示</p> <p>常用npm安装命令
+npm i xxxx -D/-S
+i 是 install的简写
+-D 是 --save-dev的简写，对应devDependencies
+-S 是 --save的简写，对应dependencies</p></div> <p>此外，如果需要发布npm包，<code>main</code>，<code>key</code>, <code>lib</code>等配置文件也是需要了解的。具体见npm文档。</p> <h3 id="src"><a href="#src" class="header-anchor">#</a> src</h3> <p>项目主目录，项目80%内容会在这个目录下</p> <h4 id="api目录"><a href="#api目录" class="header-anchor">#</a> api目录</h4> <p>目前的接口管理是使用的函数定义方式，这是一种比较好得实现方式。可以利用模块引入系统使接口清晰，同时可以避免不需要得接口被引入。因为配合了smartfetch这个接口封装库，在定义和使用时都极大程度得降低了复杂度。</p> <div class="custom-block warning"><p class="custom-block-title">提示</p> <p>接口应该严格按照定义文档指定得请求方式发送请求。登录token也最好放置在请求头部</p></div> <h4 id="common目录"><a href="#common目录" class="header-anchor">#</a> common目录</h4> <p>这个目录应该是目前项目里最复杂的模块了。所有项目无法抽取为无场景共用模块/组件的部分全都放置于此。故为了能更好得维护，此目录及子目录得使用应该严谨。</p> <h5 id="components"><a href="#components" class="header-anchor">#</a> components</h5> <p>业务组件，特定项目内可复用，但跨项目无法使用得。比如tab形式得文件展示组件。严格遵循可复用组件规范。方便他人使用。</p> <h5 id="templates"><a href="#templates" class="header-anchor">#</a> templates</h5> <p>业务模板组件。组件内还有内部接口处理逻辑。通过传入少量参数可独立工作。整组件可复用，但对props的响应极弱。同时无法脱离项目使用。此类可称为模板（组件）</p> <h5 id="mixins"><a href="#mixins" class="header-anchor">#</a> mixins</h5> <p>项目中常见的功能页面的共用方法提取。主要是编辑页，详情页，列表页等。通过mixins方式引入，可以减少大量重复代码的编写。当然缺点也是很明显的，需要查看文件内容才能知道具体用法，文件内容过多（比如listPageMixin）。可以通过文件再拆分和添加说明文档来缓解。</p> <h4 id="router"><a href="#router" class="header-anchor">#</a> router</h4> <p>路由模块定义目录，定义了路由组件的归属和加载方式。同时目录下的处理文件可以将权限数据结合实际路由对象整合成动态路由数组添加到应用中，可有效防止无权限地址访问。此外还会处理菜单数据并应用到系统菜单中，可实现动态菜单功能。</p> <h4 id="utils"><a href="#utils" class="header-anchor">#</a> utils</h4> <p>功能函数目录，目录下文件仅提供导出的功能函数，按照设计目录可以在任意文件引入并调用。故本目录下的函数应该尽量不要引入vuex或router目录下的内容。防止循环引用。</p> <p>如果确实需要vuex/router内容，可以通过参数形式传入，然后在需要使用的地方传入。此外，还可以通过运行时绑定上下文来让函数获取其他信息，这种方式也可以避免循环引入。</p> <h4 id="layouts"><a href="#layouts" class="header-anchor">#</a> layouts</h4> <p>框架组件目录。框架的意思是指页面的公共布局。例如后台管理界面的常见圣杯结构，或上左下结构，或者全屏页（无布局，仅提供公共功能，比如登录登出）。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/dev-tools.html" class="prev">开发工具</a></span> <span class="next"><a href="/dev-standard.html">开发规范</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fe9a5ee1.js" defer></script><script src="/assets/js/2.76dc2f3e.js" defer></script><script src="/assets/js/8.86e97b83.js" defer></script>
+  </body>
+</html>
